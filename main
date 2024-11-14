@@ -1,0 +1,49 @@
+import math
+
+writeFile = open("results.txt","w")
+
+def checkFloat(check):
+  Valid = True
+  while Valid == True :
+    try: 
+      num = float(check)
+      if num <= 0:
+        check = input('Please input a number greater than 0.\n')
+      elif num > 0:
+        Valid = False  
+    except:
+      check = input('your input is invalid please try again\n')  
+  return num
+
+
+diameter = checkFloat(input('Please enter the diameter.\n'))
+
+
+def findStats(diameter):
+  diameter = diameter/2
+  #i named this diameter because the code would break and stuff, i also divided it by 2 so it would cause less problems oh and i multiplied it by 2 at some spots so the math works, i hope its not a problem :)
+  circumference = math.pi * diameter*2
+  area = math.pi * (diameter**2)
+  surfaceArea = 4 * math.pi * (diameter**2)
+  volume = (4/3) * math.pi * (diameter**3)
+  print(f"""Circle:
+The diameter would be {diameter*2},
+the circumference would be {circumference},
+and the area would be {area}.
+""")
+  print(f"""Sphere:
+The surface area would be {surfaceArea},
+and the volume would be {volume}.
+""")
+  writeFile.write(f"""Circle:
+The diameter would be {diameter*2},
+the circumference would be {circumference},
+and the area would be {area}.
+""")
+  writeFile.write(f"""Sphere:
+The surface area would be {surfaceArea},
+and the volume would be {volume}.
+""")
+  writeFile.close()
+findStats(diameter)
+
