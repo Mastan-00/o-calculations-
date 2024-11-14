@@ -1,0 +1,7 @@
+Circle:
+The diameter would be 12.0,
+the circumference would be 37.69911184307752,
+and the area would be 113.09733552923255.
+Sphere:
+The surface area would be 452.3893421169302,
+and the volume would be 904.7786842338603.
